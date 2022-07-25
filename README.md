@@ -21,6 +21,7 @@ In this project we will use hadoop 3.3.3 , ubuntu server 20.04
 ![The San Juan Mountains are beautiful!](/assets/images/san-juan-mountains.jpg "San Juan Mountains")
 
 1. run VirtualBox
+![VirtualBox](/images/1.png "virtualbox")
 
 1. Create a new virtual machine
 Click new, a then provide the name of the VM , machine folder,
