@@ -25,36 +25,60 @@ In this project we will use hadoop 3.3.3 , ubuntu server 20.04
 
 1. Create a new virtual machine
 Click new, a then provide the name of the VM , machine folder,
+![VirtualBox](/images/2.png "virtualbox")
 
 1. Set the memory size( RAM )
+![VirtualBox](/images/3.png "virtualbox")
 
 1. Set the hard disk file type as VDI 
+![VirtualBox](/images/5.png "virtualbox")
 
 1. Set storage "dynamically allocated"
+![VirtualBox](/images/6.png "virtualbox")
 
 1. Set File size ," for my case , it is 80 GB"
+![VirtualBox](/images/7.png "virtualbox")
 
 1. Open settings of the newly created VM , go to the storage , and set the optical drive to the "ubuntu server" image 
+![VirtualBox](/images/9.png "virtualbox")
 
 1. (Optional) Go to system option, and set "Enable EFI"
+![VirtualBox](/images/8.png "virtualbox")
 
 1. Run the VM , GRUB will open "set install ubuntu server"
+![VirtualBox](/images/10.png "virtualbox")
 
 1. Set the language you want (English in this case)
+![VirtualBox](/images/11.png "virtualbox")
 
 1. Set the keyboard layout
+![VirtualBox](/images/12.png "virtualbox")
 
 1. Set the network address (Optional)
+![VirtualBox](/images/13.png "virtualbox")
 
 1. Configurate proxy (Optional)
+![VirtualBox](/images/14.png "virtualbox")
+
+1. Configuration ubuntu archive server
+![VirtualBox](/images/15.png "virtualbox")
 
 1. Configuration of the disk
+![VirtualBox](/images/16.png "virtualbox")
+![VirtualBox](/images/17.png "virtualbox")
+![VirtualBox](/images/18.png "virtualbox")
 
 1. Profile setup
+![VirtualBox](/images/19.png "virtualbox")
 
 1. set the ssh server 
+![VirtualBox](/images/20.png "virtualbox")
+
+1. Installation of the OS
+![VirtualBox](/images/21.png "virtualbox")
 
 1. Reboot 
+![VirtualBox](/images/22.png "virtualbox")
 
 ### Set ssh, install java
 If ssh , sshd and java are not installed, this can be done using the following commands under Ubuntu:
