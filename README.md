@@ -5,45 +5,10 @@ In this project we will use hadoop 3.3.3 , ubuntu server 20.04
 
 
 ## Preparation for hadoop
-### Set Virtualbox
-#### Linux
+### Set OS
+#### Install ubuntu
 
 
-1. Open a terminal, and update the repositories.
-``$ sudo apt-get update  ``
-1. Download and install virtualbox
-``$ sudo apt-get install virtualbox ``
-1.  install the VirtualBox Extension Pack:
-`` $ sudo apt-get install virtualbox—ext–pack``
-
-
-1. Download an Ubuntu Image directly from the official website "in our case we will be using ubuntu server".
-![The San Juan Mountains are beautiful!](/assets/images/san-juan-mountains.jpg "San Juan Mountains")
-
-1. run VirtualBox
-![VirtualBox](/images/1.png "virtualbox")
-
-1. Create a new virtual machine
-Click new, a then provide the name of the VM , machine folder,
-![VirtualBox](/images/2.png "virtualbox")
-
-1. Set the memory size( RAM )
-![VirtualBox](/images/3.png "virtualbox")
-
-1. Set the hard disk file type as VDI 
-![VirtualBox](/images/5.png "virtualbox")
-
-1. Set storage "dynamically allocated"
-![VirtualBox](/images/6.png "virtualbox")
-
-1. Set File size ," for my case , it is 80 GB"
-![VirtualBox](/images/7.png "virtualbox")
-
-1. Open settings of the newly created VM , go to the storage , and set the optical drive to the "ubuntu server" image 
-![VirtualBox](/images/9.png "virtualbox")
-
-1. (Optional) Go to system option, and set "Enable EFI"
-![VirtualBox](/images/8.png "virtualbox")
 
 1. Run the VM , GRUB will open "set install ubuntu server"
 ![VirtualBox](/images/10.png "virtualbox")
