@@ -67,6 +67,7 @@ Once the user is created, we open a shell for it, create a SSH keypair for it, c
 ```
 $ ssh-keygen -t rsa -P ""
 $ cat $HOME/.ssh/id-rsa.pub >> $HOME/.ssh/authorized_keys
+$ chmod 0600 ~/.ssh/authorized_keys
 $ ssh localhost
 ```
 
@@ -165,7 +166,124 @@ export HADOOP_OPTS="-Djava.library.path=$HADOOP_HOME/lib/native"
 export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
 ```
 
-### Common settings
+### Stand alone setup
+
+
+Set up vi `hadoop-env.sh` & vi `core-site.xml` for everything.
+
+```
+export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
+export HADOOP_CLASSPATH+=" $HADOOP_HOME/lib/*.jar"
+```
+
+
+```
+$ sudo vi $HADOOP_HOME/etc/hadoop/core-site.xml
+
+```
+
+```
+<configuration>
+    <property>
+        <name>fs.defaultFS</name>
+        <value>hdfs://localhost:9000</value>
+    </property>
+</configuration>
+```
+
+`hdfs-site.xml`
+
+```
+$ sudo vi $HADOOP_HOME/etc/hadoop/hdfs-site.xml 
+```
+```
+<configuration>
+    <property>
+        <name>dfs.replication</name>
+        <value>1</value>
+    </property>
+</configuration>
+```
+
+
+
+```
+$ sudo vi $HADOOP_HOME/etc/hadoop/mapred-site.xml 
+```
+```
+
+<configuration>
+    <property>
+        <name>mapreduce.framework.name</name>
+        <value>yarn</value>
+    </property>
+    <property>
+        <name>mapreduce.application.classpath</name>
+        <value>$HADOOP_MAPRED_HOME/share/hadoop/mapreduce/*:$HADOOP_MAPRED_HOME/share/hadoop/mapreduce/lib/*</value>
+    </property>
+</configuration>
+```
+
+
+```
+$ sudo vi $HADOOP_HOME/etc/hadoop/yarn-site.xml 
+```
+```
+<configuration>
+    <property>
+        <name>yarn.nodemanager.aux-services</name>
+        <value>mapreduce_shuffle</value>
+    </property>
+    <property>
+        <name>yarn.nodemanager.env-whitelist</name>
+        <value>JAVA_HOME,HADOOP_COMMON_HOME,HADOOP_HDFS_HOME,HADOOP_CONF_DIR,CLASSPATH_PREPEND_DISTCACHE,HADOOP_YARN_HOME,HADOOP_HOME,PATH,LANG,TZ,HADOOP_MAPRED_HOME</value>
+    </property>
+</configuration>
+```
+
+
+```
+$ sudo vi $HADOOP_HOME/etc/hadoop/workers
+```
+
+```
+hadoop-slave-1
+hadoop-slave-2
+hadoop-slave-3
+```
+
+
+Format the filesystem:
+
+
+```
+$ hdfs namenode -format
+```
+
+Start NameNode daemon and DataNode daemon:
+
+```
+$ start-dfs.sh
+```
+
+Browse the web interface for the NameNode; by default it is available at:
+
+- NameNode - http://localhost:9870/
+
+
+Start ResourceManager daemon and NodeManager daemon:
+
+```
+$ start-yarn.sh
+```
+
+
+
+
+## This need more work
+### Distributed system
+
+
 
 Set up vi `hadoop-env.sh` & vi `core-site.xml` for everything.
 
