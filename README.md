@@ -153,6 +153,13 @@ $ mv hadoop /usr/local/
 Starting Hadoop commands just from the command line requires to set its environment variables , and the HDFS binaries are added to the path.
 These lines can also be added to the file `.bashrc ` to not type them each time again.
 
+
+```
+$ vi ~/.bashrc
+
+```
+
+
 ```
 export HADOOP_HOME=/usr/local/hadoop
 export HADOOP_INSTALL=$HADOOP_HOME
@@ -170,6 +177,11 @@ export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
 
 
 Set up vi `hadoop-env.sh` & vi `core-site.xml` for everything.
+
+```
+$ sudo vi $HADOOP_HOME/etc/hadoop/hadoop-env.sh
+
+```
 
 ```
 export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
