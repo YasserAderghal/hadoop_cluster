@@ -145,8 +145,8 @@ Having setup the basic environment, we can now download the Hadoop distribution 
 $ wget https://dlcdn.apache.org/hadoop/common/hadoop-3.3.3/hadoop-3.3.3.tar.gz
 $ shasum -a 512 hadoop-3.3.3.tar.gz
 $ tar -xzvf hadoop-3.3.3.tar.gz
-$ mv hadoop-3.3.3.tar.gz hadoop
-$ mv /usr/local/
+$ mv hadoop-3.3.3 hadoop
+$ mv hadoop /usr/local/
 ```
 
 
