@@ -66,7 +66,7 @@ Once the user is created, we open a shell for it, create a SSH keypair for it, c
 
 ```
 $ ssh-keygen -t rsa -P ""
-$ cat $HOME/.ssh/id-rsa.pub >> $HOME/.ssh/authorized_keys
+$ cat $HOME/.ssh/id_rsa.pub >> $HOME/.ssh/authorized_keys
 $ chmod 0600 ~/.ssh/authorized_keys
 $ ssh localhost
 ```
@@ -254,15 +254,6 @@ $ sudo vi $HADOOP_HOME/etc/hadoop/yarn-site.xml
 ```
 
 
-```
-$ sudo vi $HADOOP_HOME/etc/hadoop/workers
-```
-
-```
-hadoop-slave-1
-hadoop-slave-2
-hadoop-slave-3
-```
 
 
 Format the filesystem:
