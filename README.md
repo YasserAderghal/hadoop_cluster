@@ -131,8 +131,9 @@ Set the firewall
 ```
 $ sudo ufw enable
 $ sudo ufw status
-$ sudo ufw allow to 192.168.1.0/24
-$ sudo ufw allow from 192.168.1.0/24
+$ sudo ufw allow ssh
+$ sudo ufw allow proto tcp to 192.168.1.0/24
+$ sudo ufw allow proto tcp from 192.168.1.0/24
 ```
 
 
