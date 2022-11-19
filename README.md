@@ -174,6 +174,10 @@ export HADOOP_OPTS="-Djava.library.path=$HADOOP_HOME/lib/native"
 export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
 ```
 
+```
+$ source ~/.bashrc
+```
+
 ### Stand alone setup
 
 
