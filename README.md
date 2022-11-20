@@ -129,7 +129,7 @@ $ sudo vi /etc/hosts
 192.168.1.104 hadoop-slave-3
 ```
 
-### Set up Firewall (Optional)
+### Set up Firewall
 Set the firewall 
 
 ```
