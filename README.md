@@ -7,7 +7,9 @@ In this project we will use hadoop 3.3.3 , ubuntu server 20.04
 ## Preparation for hadoop
 ### Set OS
 #### Install ubuntu
-
+<details>
+  <summary>Click me</summary>
+  
 
 
 1. Run the VM , GRUB will open "set install ubuntu server"
@@ -44,6 +46,7 @@ In this project we will use hadoop 3.3.3 , ubuntu server 20.04
 
 1. Reboot 
 ![VirtualBox](/images/22.png "virtualbox")
+</details>
 
 ### Set ssh, install java
 If ssh , sshd and java are not installed, this can be done using the following commands under Ubuntu:
@@ -289,6 +292,8 @@ $ start-yarn.sh
 
 
 ## This need more work
+<details>
+  <summary>Click me</summary>
 ### Distributed system
 
 
@@ -457,6 +462,7 @@ $ exit
 $ hdfs namenode -format
 ```
 
+</details>
 
 
 
