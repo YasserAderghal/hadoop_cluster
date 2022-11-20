@@ -72,6 +72,7 @@ $ ssh-keygen -t rsa -P ""
 $ cat $HOME/.ssh/id_rsa.pub >> $HOME/.ssh/authorized_keys
 $ chmod 0600 ~/.ssh/authorized_keys
 $ ssh localhost
+$ exit
 ```
 
 ### Set up networks
@@ -110,7 +111,7 @@ $ sudo vi /etc/hostname
 ```
 
 ```
-hadoop-master
+hadoop-master # case for master node 
 ```
 
 You have to edit hosts file in /etc/ folder on all nodes, specify the IP address of each system followed by their host names.
@@ -139,6 +140,13 @@ $ sudo ufw allow proto tcp to 192.168.1.0/24
 $ sudo ufw allow proto tcp from 192.168.1.0/24
 ```
 
+Copy securely the ssh keys to other nodes.
+ ```
+$ scp ~/.ssh/authorized_keys hadoop-worker-1:~/.ssh/authorized_keys
+$ scp ~/.ssh/authorized_keys hadoop-worker-2:~/.ssh/authorized_keys
+$ scp ~/.ssh/authorized_keys hadoop-worker-3:~/.ssh/authorized_keys
+
+ ```
 
 ## Configure Hadoop
 
@@ -151,6 +159,8 @@ $ shasum -a 512 hadoop-3.3.3.tar.gz
 $ tar -xzvf hadoop-3.3.3.tar.gz
 $ mv hadoop-3.3.3 hadoop
 $ mv hadoop /usr/local/
+$ sudo chown hadoop:root -R /usr/local/hadoop/
+$ sudo chmod g+rwx -R /usr/local/hadoop/
 ```
 
 
@@ -264,14 +274,14 @@ $ sudo vi $HADOOP_HOME/etc/hadoop/yarn-site.xml
 
 
 
-Format the filesystem:
+Format the file system "this command should be run on master node only":
 
 
 ```
 $ hdfs namenode -format
 ```
 
-Start NameNode daemon and DataNode daemon:
+Start hadoop DFS daemons ,the NameNode and DataNode "this command should be run on master node only":
 
 ```
 $ start-dfs.sh
@@ -279,10 +289,10 @@ $ start-dfs.sh
 
 Browse the web interface for the NameNode; by default it is available at:
 
-- NameNode - http://localhost:9870/
+- NameNode - [http://localhost:9870/](http://localhost:9870/) 
 
 
-Start ResourceManager daemon and NodeManager daemon:
+Start ResourceManager daemon and NodeManager daemon "this command should be run on master node only":
 
 ```
 $ start-yarn.sh
